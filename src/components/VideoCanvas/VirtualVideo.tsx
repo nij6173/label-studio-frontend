@@ -18,6 +18,7 @@ const canPlayUrl = async (url: string) => {
   const supported =  !!fileType && video.canPlayType(fileType) !== "";
   const modalExists = document.querySelector('.ant-modal');
 
+  console.log(fileType, supported, modalExists);
   if (!supported && !modalExists) InfoModal.error('There has been an error rendering your video, please check the format is supported');
   return supported;
 };
